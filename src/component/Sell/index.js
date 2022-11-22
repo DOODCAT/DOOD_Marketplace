@@ -474,20 +474,7 @@ const Sell = () => {
                       font-bold
                       
                       ">
-              <a
-                href={
-                  "https://songbird-explorer.flare.network/address/" +
-                  "/token/" +
-                  nftid +
-                  "/token-transfers"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-500
-                        dark:text-blue-500
-                        dark:hover:text-blue-300">
-                {nftid}
-              </a>
+              {nftid}
             </div>
             <div
               className="font-general-regular 
