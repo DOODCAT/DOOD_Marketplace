@@ -75,7 +75,7 @@ const Buy = () => {
         : contractAddress === config.ANCIENTALIENSADDRESS
         ? `${config.ANCIENTALIENSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
-        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.png`
+        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.BADBUDDIESADDRESS
         ? `${config.BADBUDDIESIMGIPFSADDRESS}/${nftid}.png`
         : `${config.BADBUDDIES2IMGIPFSADDRESS}/${nftid}.png`
@@ -178,8 +178,8 @@ const Buy = () => {
       ? getNftInfo("The Classical Cats")
       : contractAddress === config.ANCIENTALIENSADDRESS
       ? getNftInfo("The Ancient Aliens")
-      : contractAddress === config.ELEMENTCATSADDRESS
-      ? getNftInfo("ElementCats")
+      : contractAddress === config.BADBUDDIES2ADDRESS
+      ? getNftInfo("Bad Buddies2")
       : contractAddress === config.ELEMENTOWLSADDRESS
       ? getNftInfo("ElementOwls")
       : contractAddress === config.ELEMENTDOGSADDRESS
@@ -188,6 +188,8 @@ const Buy = () => {
       ? getNftInfo("ElementOctopus")
       : contractAddress === config.QAFADDRESS
       ? getNftInfo("QAF")
+      : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
+      ? getNftInfo("The Primordial Planetoids")
       : getNftInfo("Bad Buddies");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

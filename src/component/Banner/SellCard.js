@@ -122,7 +122,7 @@ const SellCard = () => {
     Signer
   );
   const PLANETOIDSCONTRACT = new ethers.Contract(
-    config.PLANETOIDSIPFSADDRESS,
+    config.PRIMORDIALPLANETOIDSADDRESS,
     PLANETOIDSABI,
     Signer
   );

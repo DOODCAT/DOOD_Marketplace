@@ -79,21 +79,67 @@ const Mynft = () => {
       for (let i = 0; i < data.length; i++) {
         if (
           account === data[i].seller &&
-          contractAddress === data[i].seller.nftContract
+          contractAddress === data[i].nftContract
         ) {
           array.push({
             imgUrl:
-              contractAddress === config.DOODNFTADDRESS
-                ? `${config.DOODCATIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : contractAddress === config.DEDNFTADDRESS
-                ? `${config.DEDDOODIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : contractAddress === config.SPACEKITTYADDRESS
-                ? `${config.SPACEKITTYIMGIPFS}/${data[
+              contractAddress === config.SPACEKITTYADDRESS
+                ? `${config.SPACEKITTYIMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`
                 : contractAddress === config.SPACEOWLSADDRESS
-                ? `${config.SPACEOWLIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : `${config.DRAGONDOODLEIMGIPFS}/${data[
+                ? `${config.SPACEOWLIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DRAGONDOODLEADDRESS
+                ? `${config.DRAGONDOODLEIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DOODNFTADDRESS
+                ? `${config.DOODCATIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DEDNFTADDRESS
+                ? `${config.DEDDOODIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTOWLSADDRESS
+                ? `${config.ELEMENTOWLSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTDOGSADDRESS
+                ? `${config.ELEMENTDOGSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTOCTOPUSADDRESS
+                ? `${config.ELEMENTOCTOPUSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.QAFADDRESS
+                ? `${config.QAFIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.ROYALRATSADDRESS
+                ? `${config.ROYALRATSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.CLASSICALCATSADDRESS
+                ? `${config.CLASSICALCATSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.ANCIENTALIENSADDRESS
+                ? `${config.ANCIENTALIENSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
+                ? `${config.PLANETOIDSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.BADBUDDIESADDRESS
+                ? `${config.BADBUDDIESIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : `${config.BADBUDDIES2IMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`,
             tokenID: Number(data[i].tokenId).toString(),

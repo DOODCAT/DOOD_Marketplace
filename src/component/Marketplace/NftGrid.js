@@ -124,7 +124,7 @@ const NftGrid = () => {
               : data[i].nftContract === config.PRIMORDIALPLANETOIDSADDRESS
               ? `${config.PLANETOIDSIMGIPFSADDRESS}/${Number(
                   data[i].tokenId
-                )}.png`
+                )}.jpg`
               : data[i].nftContract === config.BADBUDDIESADDRESS
               ? `${config.BADBUDDIESIMGIPFSADDRESS}/${Number(
                   data[i].tokenId

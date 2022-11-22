@@ -83,7 +83,7 @@ const Sell = () => {
         : contractAddress === config.ANCIENTALIENSADDRESS
         ? `${config.ANCIENTALIENSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
-        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.png`
+        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.BADBUDDIESADDRESS
         ? `${config.BADBUDDIESIMGIPFSADDRESS}/${nftid}.png`
         : `${config.BADBUDDIES2IMGIPFSADDRESS}/${nftid}.png`
