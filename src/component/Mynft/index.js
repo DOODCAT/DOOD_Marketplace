@@ -11,7 +11,6 @@ import MyNftCard from "./myNftcard";
 
 import config from "../../config/config";
 
-import spacekitty_banner from "../../assets/images/nftbanners/spacekitty_banner.png";
 import spaceowls_banner from "../../assets/images/nftbanners/spaceowls_banner.png";
 import dragondoodle_banner from "../../assets/images/nftbanners/dragondoodle_banner.png";
 import doodcats_banner from "../../assets/images/nftbanners/doodcats_banner.png";
@@ -21,6 +20,7 @@ import classicalcats_banner from "../../assets/images/nftbanners/classicalcats_b
 import ancientaliens_banner from "../../assets/images/nftbanners/ancientaliens_banner.png";
 import elementdogs_banner from "../../assets/images/nftbanners/elementdogs_banner.png";
 import badbuddies_banner from "../../assets/images/nftbanners/badbuddies_banner.png";
+import not_banner from "../../assets/images/nftbanners/no_bannder.jpg";
 
 import spacekitty_nft from "../../assets/images/nftimgs/spacekitty_nft.png";
 import spaceowl_nft from "../../assets/images/nftimgs/spaceowl_nft.png";
@@ -212,7 +212,7 @@ const Mynft = () => {
         <div className="flex flex-col items-center justify-center relative w-full">
           {contractAddress === config.SPACEKITTYADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={spacekitty_nft}
               nftname="SpaceKitty"
               contractAddress={config.SPACEKITTYADDRESS}
@@ -268,7 +268,7 @@ const Mynft = () => {
             />
           ) : contractAddress === config.ELEMENTOWLSADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={elementowl_nft}
               nftname="ElementOwl"
               contractAddress={config.ELEMENTOWLSADDRESS}
@@ -282,14 +282,14 @@ const Mynft = () => {
             />
           ) : contractAddress === config.ELEMENTOCTOPUSADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={elementoctopus_nft}
               nftname="ElementOctopus"
               contractAddress={config.ELEMENTOCTOPUSADDRESS}
             />
           ) : contractAddress === config.QAFADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={qaf_nft}
               nftname="QAF"
               contractAddress={config.QAFADDRESS}
