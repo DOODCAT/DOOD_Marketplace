@@ -186,6 +186,8 @@ const NftGrid = () => {
   };
 
   const nftCollectionFilter = (searchNft) => {
+    var sortbyAZ = document.getElementById("sortbyAZ");
+    sortbyAZ.value("Sort(A - Z)");
     setMarketPlaceSearchFilterArray(0);
     let filterArray = [];
     filterArray = marketplaceArrary.filter((marketArray) =>
@@ -383,6 +385,7 @@ const NftGrid = () => {
                   dark:text-white
                   outline-none
             "
+              id="sortbyAZ"
               onChange={(e) => nftSortbyAZ(e.target.value)}>
               <option className="sm:text-md text-sm">Sort(A - Z)</option>
               <option className="sm:text-md text-sm">Sort(Z - A)</option>
