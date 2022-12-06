@@ -159,6 +159,7 @@ const NftGrid = () => {
       a.nftName.toLowerCase() > b.nftName.toLowerCase() ? 1 : -1
     );
     setMarketplaceArray(filterArray);
+    setMarketPlaceSearchFilterArray(filterArray);
     setGetDataLoading(false);
   };
 
@@ -185,7 +186,7 @@ const NftGrid = () => {
   };
 
   const nftCollectionFilter = (searchNft) => {
-    setMarketPlaceCollectionFilterArray(0);
+    setMarketPlaceSearchFilterArray(0);
     let filterArray = [];
     filterArray = marketplaceArrary.filter((marketArray) =>
       marketArray.nftName.toLowerCase().includes(searchNft.toLowerCase())
@@ -194,7 +195,7 @@ const NftGrid = () => {
         ? marketplaceArrary
         : ""
     );
-    setMarketPlaceCollectionFilterArray(filterArray);
+    setMarketPlaceSearchFilterArray(filterArray);
     setNftCollectionSearchState(true);
     setNftSortRecently(false);
     setNftNameSearchState(false);
@@ -205,20 +206,20 @@ const NftGrid = () => {
   const nftSortbyAZ = (searchNft) => {
     let filterArray = [];
     if (searchNft === "Sort(A - Z)") {
-      filterArray = marketplaceArrary.sort((a, b) =>
+      filterArray = marketplaceSearchfilterArray.sort((a, b) =>
         a.nftName.toLowerCase() > b.nftName.toLowerCase() ? 1 : -1
       );
-      setMarketPlaceAZFilterArray(filterArray);
+      setMarketPlaceSearchFilterArray(filterArray);
       setNftSortAZ(true);
       setNftSortRecently(false);
       setNftSortZA(false);
       setNftCollectionSearchState(false);
       setNftNameSearchState(false);
     } else if (searchNft === "Sort(Z - A)") {
-      filterArray = marketplaceArrary.sort((a, b) =>
+      filterArray = marketplaceSearchfilterArray.sort((a, b) =>
         a.nftName.toLowerCase() < b.nftName.toLowerCase() ? 1 : -1
       );
-      setMarketPlaceZAFilterArray(filterArray);
+      setMarketPlaceSearchFilterArray(filterArray);
       setNftSortZA(true);
       setNftSortRecently(false);
       setNftSortAZ(false);
@@ -226,10 +227,10 @@ const NftGrid = () => {
       setNftNameSearchState(false);
     } else if (searchNft === "Recently Items") {
       console.log(marketplaceArrary);
-      filterArray = marketplaceArrary.sort((a, b) =>
+      filterArray = marketplaceSearchfilterArray.sort((a, b) =>
         a.listedTime < b.listedTime ? 1 : -1
       );
-      setMarketPlaceRecentlyFilterArray(filterArray);
+      setMarketPlaceSearchFilterArray(filterArray);
       setNftSortRecently(true);
       setNftSortZA(false);
       setNftSortAZ(false);
@@ -419,24 +420,22 @@ const NftGrid = () => {
                   ) : nftCollectionsearchState ? (
                     <>
                       {" "}
-                      {marketplaceCollectionfilterArray.map(
-                        (nftArray, index) => (
-                          <NftSingle
-                            key={index}
-                            title={nftArray.nftName}
-                            image={nftArray.nftImgUrl}
-                            price={nftArray.price}
-                            contractAddress={nftArray.nftContract}
-                            priceAsset={nftArray.priceAsset}
-                            tokenId={nftArray.tokenId}
-                          />
-                        )
-                      )}
+                      {marketplaceSearchfilterArray.map((nftArray, index) => (
+                        <NftSingle
+                          key={index}
+                          title={nftArray.nftName}
+                          image={nftArray.nftImgUrl}
+                          price={nftArray.price}
+                          contractAddress={nftArray.nftContract}
+                          priceAsset={nftArray.priceAsset}
+                          tokenId={nftArray.tokenId}
+                        />
+                      ))}
                     </>
                   ) : nftSortAZ ? (
                     <>
                       {" "}
-                      {marketplaceAZfilterArray.map((nftArray, index) => (
+                      {marketplaceSearchfilterArray.map((nftArray, index) => (
                         <NftSingle
                           key={index}
                           title={nftArray.nftName}
@@ -451,7 +450,7 @@ const NftGrid = () => {
                   ) : nftSortZA ? (
                     <>
                       {" "}
-                      {marketplaceZAfilterArray.map((nftArray, index) => (
+                      {marketplaceSearchfilterArray.map((nftArray, index) => (
                         <NftSingle
                           key={index}
                           title={nftArray.nftName}
@@ -466,7 +465,7 @@ const NftGrid = () => {
                   ) : nftSortRecently ? (
                     <>
                       {" "}
-                      {marketplaceRecentlyfilterArray.map((nftArray, index) => (
+                      {marketplaceSearchfilterArray.map((nftArray, index) => (
                         <NftSingle
                           key={index}
                           title={nftArray.nftName}
