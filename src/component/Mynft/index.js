@@ -11,7 +11,6 @@ import MyNftCard from "./myNftcard";
 
 import config from "../../config/config";
 
-import spacekitty_banner from "../../assets/images/nftbanners/spacekitty_banner.png";
 import spaceowls_banner from "../../assets/images/nftbanners/spaceowls_banner.png";
 import dragondoodle_banner from "../../assets/images/nftbanners/dragondoodle_banner.png";
 import doodcats_banner from "../../assets/images/nftbanners/doodcats_banner.png";
@@ -21,6 +20,7 @@ import classicalcats_banner from "../../assets/images/nftbanners/classicalcats_b
 import ancientaliens_banner from "../../assets/images/nftbanners/ancientaliens_banner.png";
 import elementdogs_banner from "../../assets/images/nftbanners/elementdogs_banner.png";
 import badbuddies_banner from "../../assets/images/nftbanners/badbuddies_banner.png";
+import not_banner from "../../assets/images/nftbanners/no_bannder.jpg";
 
 import spacekitty_nft from "../../assets/images/nftimgs/spacekitty_nft.png";
 import spaceowl_nft from "../../assets/images/nftimgs/spaceowl_nft.png";
@@ -37,6 +37,7 @@ import qaf_nft from "../../assets/images/nftimgs/qaf_nft.png";
 import primordialplanet_nft from "../../assets/images/nftimgs/primordialplanet_nft.png";
 import badbuddies_nft from "../../assets/images/nftimgs/badbuddies_nft.png";
 import badbuddies2_nft from "../../assets/images/nftimgs/badbuddies2_nft.png";
+import badbuddies3_nft from "../../assets/images/nftimgs/badbuddies3_nft.png";
 
 import SPACEKITTYABI from "../../assets/abi/spacekittynftABI.json";
 import SPACEOWLABI from "../../assets/abi/spaceowlnftABI.json";
@@ -79,21 +80,71 @@ const Mynft = () => {
       for (let i = 0; i < data.length; i++) {
         if (
           account === data[i].seller &&
-          contractAddress === data[i].seller.nftContract
+          contractAddress === data[i].nftContract
         ) {
           array.push({
             imgUrl:
-              contractAddress === config.DOODNFTADDRESS
-                ? `${config.DOODCATIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : contractAddress === config.DEDNFTADDRESS
-                ? `${config.DEDDOODIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : contractAddress === config.SPACEKITTYADDRESS
-                ? `${config.SPACEKITTYIMGIPFS}/${data[
+              contractAddress === config.SPACEKITTYADDRESS
+                ? `${config.SPACEKITTYIMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`
                 : contractAddress === config.SPACEOWLSADDRESS
-                ? `${config.SPACEOWLIMGIPFS}/${data[i].tokenId.toString()}.png`
-                : `${config.DRAGONDOODLEIMGIPFS}/${data[
+                ? `${config.SPACEOWLIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DRAGONDOODLEADDRESS
+                ? `${config.DRAGONDOODLEIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DOODNFTADDRESS
+                ? `${config.DOODCATIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.DEDNFTADDRESS
+                ? `${config.DEDDOODIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTOWLSADDRESS
+                ? `${config.ELEMENTOWLSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTDOGSADDRESS
+                ? `${config.ELEMENTDOGSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.ELEMENTOCTOPUSADDRESS
+                ? `${config.ELEMENTOCTOPUSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.QAFADDRESS
+                ? `${config.QAFIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.ROYALRATSADDRESS
+                ? `${config.ROYALRATSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.CLASSICALCATSADDRESS
+                ? `${config.CLASSICALCATSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.ANCIENTALIENSADDRESS
+                ? `${config.ANCIENTALIENSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
+                ? `${config.PLANETOIDSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.BADBUDDIESADDRESS
+                ? `${config.BADBUDDIESIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.BADBUDDIES3ADDRESS
+                ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : `${config.BADBUDDIES2IMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`,
             tokenID: Number(data[i].tokenId).toString(),
@@ -140,6 +191,8 @@ const Mynft = () => {
         ? PLANETOIDSABI
         : contractAddress === config.BADBUDDIESADDRESS
         ? SPACEKITTYABI
+        : contractAddress === config.BADBUDDIES3ADDRESS
+        ? SPACEKITTYABI
         : SPACEKITTYABI,
       Signer
     );
@@ -182,6 +235,8 @@ const Mynft = () => {
               ? `${config.PLANETOIDSIMGIPFSADDRESS}/${data[i].toString()}.png`
               : contractAddress === config.BADBUDDIESADDRESS
               ? `${config.BADBUDDIESIMGIPFSADDRESS}/${data[i].toString()}.png`
+              : contractAddress === config.BADBUDDIES3ADDRESS
+              ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${data[i].toString()}.png`
               : `${config.BADBUDDIES2IMGIPFSADDRESS}/${data[i].toString()}.png`,
           tokenID: Number(data[i]).toString(),
           ipfs: config.SPACEOWLIMGIPFS,
@@ -212,7 +267,7 @@ const Mynft = () => {
         <div className="flex flex-col items-center justify-center relative w-full">
           {contractAddress === config.SPACEKITTYADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={spacekitty_nft}
               nftname="SpaceKitty"
               contractAddress={config.SPACEKITTYADDRESS}
@@ -268,7 +323,7 @@ const Mynft = () => {
             />
           ) : contractAddress === config.ELEMENTOWLSADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={elementowl_nft}
               nftname="ElementOwl"
               contractAddress={config.ELEMENTOWLSADDRESS}
@@ -282,14 +337,14 @@ const Mynft = () => {
             />
           ) : contractAddress === config.ELEMENTOCTOPUSADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={elementoctopus_nft}
               nftname="ElementOctopus"
               contractAddress={config.ELEMENTOCTOPUSADDRESS}
             />
           ) : contractAddress === config.QAFADDRESS ? (
             <NftBanner
-              bannerimage={spacekitty_banner}
+              bannerimage={not_banner}
               nftimg={qaf_nft}
               nftname="QAF"
               contractAddress={config.QAFADDRESS}
@@ -307,6 +362,13 @@ const Mynft = () => {
               nftimg={badbuddies_nft}
               nftname="Bad Buddies"
               contractAddress={config.BADBUDDIESADDRESS}
+            />
+          ) : contractAddress === config.BADBUDDIES3ADDRESS ? (
+            <NftBanner
+              bannerimage={badbuddies_banner}
+              nftimg={badbuddies3_nft}
+              nftname="Bad Buddies3"
+              contractAddress={config.BADBUDDIES3ADDRESS}
             />
           ) : (
             <NftBanner

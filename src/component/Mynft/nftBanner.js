@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const NftBanner = ({ bannerimage, nftimg, nftname, contractAddress }) => {
   return (
@@ -21,7 +21,7 @@ const NftBanner = ({ bannerimage, nftimg, nftname, contractAddress }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 0.9,
           delay: 0.1,
         }}
@@ -32,15 +32,14 @@ const NftBanner = ({ bannerimage, nftimg, nftname, contractAddress }) => {
                       sm:text-3xl
                       pt-3
                       font-bold
-                      "
-      >
+                      ">
         {nftname}
       </motion.h1>
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 0.9,
           delay: 0.1,
         }}
@@ -52,22 +51,20 @@ const NftBanner = ({ bannerimage, nftimg, nftname, contractAddress }) => {
                       sm:text-sm
                       pt-3
                       font-bold
-                      "
-      >
+                      ">
         <a
           href={
-            'https://songbird-explorer.flare.network/address/' +
+            "https://songbird-explorer.flare.network/address/" +
             contractAddress +
-            '/token-transfers'
+            "/token-transfers"
           }
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           {contractAddress.slice(0, 4)} ..... {contractAddress.slice(-4)}
         </a>
       </motion.h1>
     </>
-  )
-}
+  );
+};
 
-export default NftBanner
+export default NftBanner;

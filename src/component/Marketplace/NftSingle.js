@@ -36,7 +36,7 @@ const NftSingle = ({
           <div className="px-4 py-2">
             <p
               className="dark:text-white font-bold font-general-medium mb-2
-                            md:text-lg text-left text-sm text-ternary-dark">
+                            md:text-sm text-left text-sm text-ternary-dark">
               {title}
             </p>
             <span className="dark:text-white font-bold text- text-left text-ternary-dark">
@@ -44,7 +44,7 @@ const NftSingle = ({
               {priceAsset === config.SDOODTOKENADDRESS
                 ? "sDOOD"
                 : priceAsset === config.CARETOKENADDRESS
-                ? "LOVE"
+                ? "CARE"
                 : "SGB"}
             </span>
           </div>

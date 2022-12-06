@@ -75,9 +75,11 @@ const Buy = () => {
         : contractAddress === config.ANCIENTALIENSADDRESS
         ? `${config.ANCIENTALIENSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
-        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.png`
+        ? `${config.PLANETOIDSIMGIPFSADDRESS}/${nftid}.jpg`
         : contractAddress === config.BADBUDDIESADDRESS
         ? `${config.BADBUDDIESIMGIPFSADDRESS}/${nftid}.png`
+        : contractAddress === config.BADBUDDIES3ADDRESS
+        ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${nftid}.png`
         : `${config.BADBUDDIES2IMGIPFSADDRESS}/${nftid}.png`
     );
     await getMarketItem();
@@ -137,6 +139,8 @@ const Buy = () => {
         ? config.PLANETOIDSIPFSADDRESS
         : contractAddress === config.BADBUDDIESADDRESS
         ? config.BADBUDDIESIPFSADDRESS
+        : contractAddress === config.BADBUDDIES3ADDRESS
+        ? config.BADBUDDIES3IPFSADDRESS
         : config.BADBUDDIES2IPFSADDRESS;
 
     try {
@@ -178,8 +182,8 @@ const Buy = () => {
       ? getNftInfo("The Classical Cats")
       : contractAddress === config.ANCIENTALIENSADDRESS
       ? getNftInfo("The Ancient Aliens")
-      : contractAddress === config.ELEMENTCATSADDRESS
-      ? getNftInfo("ElementCats")
+      : contractAddress === config.BADBUDDIES2ADDRESS
+      ? getNftInfo("Bad Buddies2")
       : contractAddress === config.ELEMENTOWLSADDRESS
       ? getNftInfo("ElementOwls")
       : contractAddress === config.ELEMENTDOGSADDRESS
@@ -188,6 +192,10 @@ const Buy = () => {
       ? getNftInfo("ElementOctopus")
       : contractAddress === config.QAFADDRESS
       ? getNftInfo("QAF")
+      : contractAddress === config.PRIMORDIALPLANETOIDSADDRESS
+      ? getNftInfo("The Primordial Planetoids")
+      : contractAddress === config.BADBUDDIES3ADDRESS
+      ? getNftInfo("Bad Buddies3")
       : getNftInfo("Bad Buddies");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -486,20 +494,7 @@ const Buy = () => {
                       font-bold
                       
                       ">
-              <a
-                href={
-                  "https://songbird-explorer.flare.network/address/" +
-                  "/token/" +
-                  nftid +
-                  "/token-transfers"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-500
-                        dark:text-blue-500
-                        dark:hover:text-blue-300">
-                {nftid}
-              </a>
+              {nftid}
             </div>
             <div
               className="font-general-regular 

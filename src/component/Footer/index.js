@@ -2,7 +2,7 @@ const socialLinks = [
   {
     id: 1,
     icon: <i className="fa-github fab" />,
-    url: "https://github.com/realstoman",
+    url: "https://github.com/DOODCAT",
   },
   {
     id: 2,

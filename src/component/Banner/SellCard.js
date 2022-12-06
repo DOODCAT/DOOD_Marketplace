@@ -19,6 +19,7 @@ import qaf_nft from "../../assets/images/nftimgs/qaf_nft.png";
 import primordialplanet_nft from "../../assets/images/nftimgs/primordialplanet_nft.png";
 import badbuddies_nft from "../../assets/images/nftimgs/badbuddies_nft.png";
 import badbuddies2_nft from "../../assets/images/nftimgs/badbuddies2_nft.png";
+import badbuddies3_nft from "../../assets/images/nftimgs/badbuddies3_nft.png";
 
 import config from "../../config/config";
 
@@ -27,6 +28,14 @@ import SPACEOWLABI from "../../assets/abi/spaceowlnftABI.json";
 import DOODCATNFTABI from "../../assets/abi/doodcatnftABI.json";
 import DEDDOODNFTABI from "../../assets/abi/deddoodnftABI.json";
 import DRAGONDOODLEABI from "../../assets/abi/dragondoodlenftABI.json";
+import ELEMENTOWLSABI from "../../assets/abi/elementowlsnftABI.json";
+import ELEMENTDOGSABI from "../../assets/abi/elementdogsnftABI.json";
+import ELEMENTOCTOPUSABI from "../../assets/abi/elementoctupusnftABI.json";
+import QAFABI from "../../assets/abi/qafnftABI.json";
+import ROYALRATSABI from "../../assets/abi/royalratsnftABI.json";
+import CLASSICALCATSABI from "../../assets/abi/classicalcatsnftABI.json";
+import ALIENSABI from "../../assets/abi/aliensnftABI.json";
+import PLANETOIDSABI from "../../assets/abi/planetsnftABI.json";
 
 const ethers = require("ethers");
 
@@ -40,6 +49,17 @@ const SellCard = () => {
   const [spaceittyNftCount, setSpaceKittyNftCount] = useState(0);
   const [spaceowlNftCount, setSpaceOwlNftCount] = useState(0);
   const [dragondoodleNftCount, setDragondDolldeNftCount] = useState(0);
+  const [elementowlsNftCount, setElementowlsNftCount] = useState(0);
+  const [elementdogsNftCount, setElementdogsNftCount] = useState(0);
+  const [elementoctpusNftCount, setElmentoctpusNftCount] = useState(0);
+  const [qafNftCount, setQafNftCount] = useState(0);
+  const [royalratsNftCount, setRoyalRatsNftCount] = useState(0);
+  const [classicalCatsNftCount, setClassicalCatsNftCount] = useState(0);
+  const [ancientAliensNftCount, setAncientAliensNftCount] = useState(0);
+  const [planetoidNftCount, setPlanetoidNftCount] = useState(0);
+  const [badbuddiesNftCount, setBadbuddiesNftCount] = useState(0);
+  const [badbuddies2NftCount, setBadbuddies2NftCount] = useState(0);
+  const [badbuddies3NftCount, setBadbuddies3NftCount] = useState(0);
 
   const DOODCATCONTRACT = new ethers.Contract(
     config.DOODNFTADDRESS,
@@ -71,6 +91,60 @@ const SellCard = () => {
     Signer
   );
 
+  const ELEMENTOWLSCONTRACT = new ethers.Contract(
+    config.ELEMENTOWLSADDRESS,
+    ELEMENTOWLSABI,
+    Signer
+  );
+
+  const ELEMENTDOGSCONTRACT = new ethers.Contract(
+    config.ELEMENTDOGSADDRESS,
+    ELEMENTDOGSABI,
+    Signer
+  );
+  const ELEMENTOCTOPUSCONTRACT = new ethers.Contract(
+    config.ELEMENTOCTOPUSADDRESS,
+    ELEMENTOCTOPUSABI,
+    Signer
+  );
+  const QAFCONTRACT = new ethers.Contract(config.QAFADDRESS, QAFABI, Signer);
+  const ROYALRATSCONTRACT = new ethers.Contract(
+    config.ROYALRATSADDRESS,
+    ROYALRATSABI,
+    Signer
+  );
+  const CLASSICALCATSCONTRACT = new ethers.Contract(
+    config.CLASSICALCATSADDRESS,
+    CLASSICALCATSABI,
+    Signer
+  );
+  const ALIENSCONTRACT = new ethers.Contract(
+    config.ANCIENTALIENSADDRESS,
+    ALIENSABI,
+    Signer
+  );
+  const PLANETOIDSCONTRACT = new ethers.Contract(
+    config.PRIMORDIALPLANETOIDSADDRESS,
+    PLANETOIDSABI,
+    Signer
+  );
+  const BADBUDDIESCONTRACT = new ethers.Contract(
+    config.BADBUDDIESADDRESS,
+    SPACEKITTYABI,
+    Signer
+  );
+  const BADBUDDIES2CONTRACT = new ethers.Contract(
+    config.BADBUDDIES2ADDRESS,
+    SPACEKITTYABI,
+    Signer
+  );
+
+  const BADBUDDIES3CONTRACT = new ethers.Contract(
+    config.BADBUDDIES3ADDRESS,
+    SPACEKITTYABI,
+    Signer
+  );
+
   const getNFTCount = async () => {
     await DOODCATCONTRACT.walletOfOwner(account).then(async (data) => {
       setDoodCatNftCount(data.length);
@@ -90,6 +164,50 @@ const SellCard = () => {
 
     await DRAGONDOODLECONTRACT.walletOfOwner(account).then(async (data) => {
       setDragondDolldeNftCount(data.length);
+    });
+
+    await ELEMENTOWLSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setElementowlsNftCount(data.length);
+    });
+
+    await ELEMENTDOGSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setElementdogsNftCount(data.length);
+    });
+
+    await ELEMENTOCTOPUSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setElmentoctpusNftCount(data.length);
+    });
+
+    await QAFCONTRACT.walletOfOwner(account).then(async (data) => {
+      setQafNftCount(data.length);
+    });
+
+    await CLASSICALCATSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setClassicalCatsNftCount(data.length);
+    });
+
+    await ROYALRATSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setRoyalRatsNftCount(data.length);
+    });
+
+    await ALIENSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setAncientAliensNftCount(data.length);
+    });
+
+    await PLANETOIDSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setPlanetoidNftCount(data.length);
+    });
+
+    await BADBUDDIESCONTRACT.walletOfOwner(account).then(async (data) => {
+      setBadbuddiesNftCount(data.length);
+    });
+
+    await BADBUDDIES2CONTRACT.walletOfOwner(account).then(async (data) => {
+      setBadbuddies2NftCount(data.length);
+    });
+
+    await BADBUDDIES3CONTRACT.walletOfOwner(account).then(async (data) => {
+      setBadbuddies3NftCount(data.length);
     });
   };
 
@@ -163,66 +281,73 @@ const SellCard = () => {
           <CollectionCard
             image={elementowl_nft}
             title="ElementOwls"
-            count={0}
+            count={elementowlsNftCount}
             contractAddresss={config.ELEMENTOWLSADDRESS}
           />
           <CollectionCard
             image={elementdog_nft}
             title="ElementDogs"
-            count={0}
+            count={elementdogsNftCount}
             contractAddresss={config.ELEMENTDOGSADDRESS}
           />
           <CollectionCard
             image={elementoctopus_nft}
             title="ElementOctopus"
-            count={0}
+            count={elementoctpusNftCount}
             contractAddresss={config.ELEMENTOCTOPUSADDRESS}
           />
           <CollectionCard
             image={qaf_nft}
             title="QAF"
-            count={0}
+            count={qafNftCount}
             contractAddresss={config.QAFADDRESS}
           />
 
           <CollectionCard
             image={royalrat_nft}
             title="Royal Rats"
-            count={0}
+            count={royalratsNftCount}
             contractAddresss={config.ROYALRATSADDRESS}
           />
           <CollectionCard
             image={classicalcat_nft}
             title="The Classical Cats"
-            count={0}
+            count={classicalCatsNftCount}
             contractAddresss={config.CLASSICALCATSADDRESS}
           />
           <CollectionCard
             image={alien_nft}
             title="The Ancient Aliens"
-            count={0}
+            count={ancientAliensNftCount}
             contractAddresss={config.ANCIENTALIENSADDRESS}
           />
 
           <CollectionCard
             image={primordialplanet_nft}
             title="The Primordial Planetoids"
-            count={0}
+            count={planetoidNftCount}
             contractAddresss={config.PRIMORDIALPLANETOIDSADDRESS}
           />
 
           <CollectionCard
             image={badbuddies_nft}
             title="Bad Buddies"
-            count={0}
+            count={badbuddiesNftCount}
             contractAddresss={config.BADBUDDIESADDRESS}
           />
 
           <CollectionCard
             image={badbuddies2_nft}
             title="Bad Buddies2"
-            count={0}
+            count={badbuddies2NftCount}
             contractAddresss={config.BADBUDDIES2ADDRESS}
+          />
+
+          <CollectionCard
+            image={badbuddies3_nft}
+            title="Bad Buddies3"
+            count={badbuddies3NftCount}
+            contractAddresss={config.BADBUDDIES3ADDRESS}
           />
         </motion.div>
       </motion.section>
