@@ -186,8 +186,6 @@ const NftGrid = () => {
   };
 
   const nftCollectionFilter = (searchNft) => {
-    var sortbyAZ = document.getElementById("sortbyAZ");
-    sortbyAZ.value("Sort(A - Z)");
     setMarketPlaceSearchFilterArray(0);
     let filterArray = [];
     filterArray = marketplaceArrary.filter((marketArray) =>
