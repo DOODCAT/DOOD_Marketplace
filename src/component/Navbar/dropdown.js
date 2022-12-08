@@ -250,6 +250,21 @@ export default function NftCollectionDropDown() {
                 </Link>
               )}
             </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.BADBUDDIES3ADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  Bad Buddies3
+                </Link>
+              )}
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>
