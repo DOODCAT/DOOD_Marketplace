@@ -365,8 +365,8 @@ const Buy = () => {
                 : nftpriceAsset === config.CARETOKENADDRESS
                 ? " Care"
                 : nftpriceAsset === config.COOTIECOINADDRESS
-                ? "CootieCoin"
-                : "SGB"}
+                ? " COOT"
+                : " SGB"}
             </motion.h1>
           </Card>
         </div>

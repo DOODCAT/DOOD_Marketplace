@@ -1,10 +1,5 @@
 const socialLinks = [
   {
-    id: 1,
-    icon: <i className="fa-github fab" />,
-    url: "https://github.com/DOODCAT",
-  },
-  {
     id: 2,
     icon: <i className="fa-twitter fab" />,
     url: "https://twitter.com/SpaceCatsSGB",
