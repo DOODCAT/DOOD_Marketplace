@@ -272,7 +272,7 @@ const Sell = () => {
                 tx.wait().then(() => {
                   notification.success({
                     message: "Success",
-                    description: "Sale Successful.",
+                    description: "Listed Successful.",
                   });
                   setLoading(false);
                   Navigate("/");
@@ -559,7 +559,7 @@ const Sell = () => {
                     <option className="sm:text-md text-sm">SGB</option>
                     <option className="sm:text-md text-sm">sDOOD</option>
                     <option className="sm:text-md text-sm">Care</option>
-                    <option className="sm:text-md text-sm">CootieCoin</option>
+                    <option className="sm:text-md text-sm">COOT</option>
                   </select>
                   <input
                     onChange={(e) => {
