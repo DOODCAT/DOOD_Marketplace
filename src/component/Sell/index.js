@@ -263,6 +263,8 @@ const Sell = () => {
                   ? config.SDOODTOKENADDRESS
                   : tokenType === "Care"
                   ? config.CARETOKENADDRESS
+                  : tokenType === "OCN"
+                  ? config.OCNTOKENADDRESS
                   : config.COOTIECOINADDRESS,
                 nftid,
                 tokenAmountValue,
@@ -560,6 +562,7 @@ const Sell = () => {
                     <option className="sm:text-md text-sm">sDOOD</option>
                     <option className="sm:text-md text-sm">Care</option>
                     <option className="sm:text-md text-sm">CootieCoin</option>
+                    <option className="sm:text-md text-sm">OCN</option>
                   </select>
                   <input
                     onChange={(e) => {

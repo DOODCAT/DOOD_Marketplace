@@ -15,6 +15,7 @@ import config from "../../config/config";
 import MARKETPLACEABI from "../../assets/abi/marketplaceABI.json";
 import SDOODTOKENABI from "../../assets/abi/sdoodTokenABI.json";
 import CARETOKENABI from "../../assets/abi/careTokenABI.json";
+import OCNTOKENABI from "../../assets/abi/ocnTokenABI.json";
 import COOTIECOINABI from "../../assets/abi/cootiecoinABI.json";
 
 const ethers = require("ethers");
@@ -206,6 +207,7 @@ const Buy = () => {
     if (
       nftpriceAsset === config.SDOODTOKENADDRESS ||
       nftpriceAsset === config.CARETOKENADDRESS ||
+      nftpriceAsset === config.OCNTOKENADDRESS ||
       nftpriceAsset === config.COOTIECOINADDRESS
     ) {
       const Provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -217,6 +219,8 @@ const Buy = () => {
           ? SDOODTOKENABI
           : nftpriceAsset === config.CARETOKENADDRESS
           ? CARETOKENABI
+          : nftpriceAsset === config.OCNTOKENADDRESS
+          ? OCNTOKENABI
           : COOTIECOINABI,
         Signer
       );
@@ -365,7 +369,9 @@ const Buy = () => {
                 : nftpriceAsset === config.CARETOKENADDRESS
                 ? " Care"
                 : nftpriceAsset === config.COOTIECOINADDRESS
-                ? "CootieCoin"
+                ? " CootieCoin"
+                : nftpriceAsset === config.OCNTOKENADDRESS
+                ? " OCN"
                 : "SGB"}
             </motion.h1>
           </Card>

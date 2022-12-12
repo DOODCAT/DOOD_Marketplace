@@ -42,10 +42,14 @@ const NftSingle = ({
             <span className="dark:text-white font-bold text- text-left text-ternary-dark">
               Price : {price}{" "}
               {priceAsset === config.SDOODTOKENADDRESS
-                ? "sDOOD"
+                ? " sDOOD"
                 : priceAsset === config.CARETOKENADDRESS
-                ? "CARE"
-                : "SGB"}
+                ? " CARE"
+                : priceAsset === config.COOTIECOINADDRESS
+                ? "CootieCoin"
+                : priceAsset === config.OCNTOKENADDRESS
+                ? " OCN"
+                : " SGB"}
             </span>
           </div>
         </div>
