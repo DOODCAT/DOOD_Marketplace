@@ -20,6 +20,11 @@ import primordialplanet_nft from "../../assets/images/nftimgs/primordialplanet_n
 import badbuddies_nft from "../../assets/images/nftimgs/badbuddies_nft.png";
 import badbuddies2_nft from "../../assets/images/nftimgs/badbuddies2_nft.png";
 import badbuddies3_nft from "../../assets/images/nftimgs/badbuddies3_nft.png";
+import sgbWhalesV1_nft from "../../assets/images/nftimgs/sgbWhalesV1.png";
+import sgbWhalesV2_nft from "../../assets/images/nftimgs/sgbWhalesV2.png";
+import sgbTurtle_nft from "../../assets/images/nftimgs/sgbTurtle.png";
+import gangsteSeal_nft from "../../assets/images/nftimgs/gangsterSeal.png";
+import gangsterOctopus_nft from "../../assets/images/nftimgs/gangsterOctopus.png";
 
 import config from "../../config/config";
 
@@ -36,6 +41,11 @@ import ROYALRATSABI from "../../assets/abi/royalratsnftABI.json";
 import CLASSICALCATSABI from "../../assets/abi/classicalcatsnftABI.json";
 import ALIENSABI from "../../assets/abi/aliensnftABI.json";
 import PLANETOIDSABI from "../../assets/abi/planetsnftABI.json";
+import SGBWHALEV1ABI from "../../assets/abi/sgbWhalev1ABI.json";
+import SGBWHALEV2ABI from "../../assets/abi/sgbWhalev2ABI.json";
+import SGBTURTLEABI from "../../assets/abi/sgbTurtleABI.json";
+import GANGSTERSEALABI from "../../assets/abi/gangsterSealABI.json";
+import GANGSTEROCTOPUSABI from "../../assets/abi/gangsterOctopusABI.json";
 
 const ethers = require("ethers");
 
@@ -60,6 +70,12 @@ const SellCard = () => {
   const [badbuddiesNftCount, setBadbuddiesNftCount] = useState(0);
   const [badbuddies2NftCount, setBadbuddies2NftCount] = useState(0);
   const [badbuddies3NftCount, setBadbuddies3NftCount] = useState(0);
+
+  const [sgbWhalev1NftCount, setSgbWhaleV1NftCount] = useState(0);
+  const [sgbWhalev2NftCount, setSgbWhaleV2NftCount] = useState(0);
+  const [sgbTurtleNftCount, setSgbTurtleNftCount] = useState(0);
+  const [gangsterSealNftCount, setGangsterSealnftCount] = useState(0);
+  const [gangsterOctopusNftCount, setGangsterOctopusNftCount] = useState(0);
 
   const DOODCATCONTRACT = new ethers.Contract(
     config.DOODNFTADDRESS,
@@ -145,6 +161,36 @@ const SellCard = () => {
     Signer
   );
 
+  const SGBWHALEV1CONTRACT = new ethers.Contract(
+    config.SGBWHALEV1ADDRESS,
+    SGBWHALEV1ABI,
+    Signer
+  );
+
+  const SGBWHALEV2CONTRACT = new ethers.Contract(
+    config.SGBWHALEV2ADDRESS,
+    SGBWHALEV2ABI,
+    Signer
+  );
+
+  const SGBTURTLECONTRACT = new ethers.Contract(
+    config.SGBTURTLEADDRESS,
+    SGBTURTLEABI,
+    Signer
+  );
+
+  const GANGSTERSEALCONTRACT = new ethers.Contract(
+    config.GANGSTERSEALADDRESS,
+    GANGSTERSEALABI,
+    Signer
+  );
+
+  const GANGSTEROCTOPUSCONTRACT = new ethers.Contract(
+    config.GANGSTEROCTOPUSADDRESS,
+    GANGSTEROCTOPUSABI,
+    Signer
+  );
+
   const getNFTCount = async () => {
     await DOODCATCONTRACT.walletOfOwner(account).then(async (data) => {
       setDoodCatNftCount(data.length);
@@ -208,6 +254,26 @@ const SellCard = () => {
 
     await BADBUDDIES3CONTRACT.walletOfOwner(account).then(async (data) => {
       setBadbuddies3NftCount(data.length);
+    });
+
+    await SGBWHALEV1CONTRACT.walletOfOwner(account).then(async (data) => {
+      setSgbWhaleV1NftCount(data.length);
+    });
+
+    await SGBWHALEV2CONTRACT.walletOfOwner(account).then(async (data) => {
+      setSgbWhaleV2NftCount(data.length);
+    });
+
+    await SGBTURTLECONTRACT.walletOfOwner(account).then(async (data) => {
+      setSgbTurtleNftCount(data.length);
+    });
+
+    await GANGSTERSEALCONTRACT.walletOfOwner(account).then(async (data) => {
+      setGangsterSealnftCount(data.length);
+    });
+
+    await GANGSTEROCTOPUSCONTRACT.walletOfOwner(account).then(async (data) => {
+      setGangsterOctopusNftCount(data.length);
     });
   };
 
@@ -348,6 +414,41 @@ const SellCard = () => {
             title="Bad Buddies3"
             count={badbuddies3NftCount}
             contractAddresss={config.BADBUDDIES3ADDRESS}
+          />
+
+          <CollectionCard
+            image={sgbWhalesV1_nft}
+            title="SGBWhales V1"
+            count={sgbWhalev1NftCount}
+            contractAddresss={config.SGBWHALEV1ADDRESS}
+          />
+
+          <CollectionCard
+            image={sgbWhalesV2_nft}
+            title="SGBWhales v2"
+            count={sgbWhalev2NftCount}
+            contractAddresss={config.SGBWHALEV2ADDRESS}
+          />
+
+          <CollectionCard
+            image={sgbTurtle_nft}
+            title="SGBTurtle"
+            count={sgbTurtleNftCount}
+            contractAddresss={config.SGBTURTLEADDRESS}
+          />
+
+          <CollectionCard
+            image={gangsteSeal_nft}
+            title="GangSterSeal"
+            count={gangsterSealNftCount}
+            contractAddresss={config.GANGSTERSEALADDRESS}
+          />
+
+          <CollectionCard
+            image={gangsterOctopus_nft}
+            title="GangsterOctopus"
+            count={gangsterOctopusNftCount}
+            contractAddresss={config.GANGSTEROCTOPUSADDRESS}
           />
         </motion.div>
       </motion.section>

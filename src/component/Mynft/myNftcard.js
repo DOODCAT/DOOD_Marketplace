@@ -56,6 +56,16 @@ const MyNftCard = ({ nftid, image, type, contractAddress }) => {
                 ? "ElementOctopus"
                 : contractAddress === config.QAFADDRESS
                 ? "QAF"
+                : contractAddress === config.SGBWHALEV1ADDRESS
+                ? "SGBWhales V1"
+                : contractAddress === config.SGBWHALEV2ADDRESS
+                ? "SGBWhales V2"
+                : contractAddress === config.SGBTURTLEADDRESS
+                ? "SGBTurtle"
+                : contractAddress === config.GANGSTERSEALADDRESS
+                ? "Gangster Seals"
+                : contractAddress === config.GANGSTEROCTOPUSADDRESS
+                ? "Gangster Octopuses"
                 : "Bad Buddies"}{" "}
               # {nftid}
             </p>

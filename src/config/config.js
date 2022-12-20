@@ -24,6 +24,12 @@ module.exports = {
   BADBUDDIES2ADDRESS: "0xf93a5592887B8e46A4Bb808fB8f702F33E60E292",
   BADBUDDIES3ADDRESS: "0xe2AF8A40d6B0AEEd9A2851Bee78e0D2157a1d8FA",
 
+  SGBWHALEV1ADDRESS: "0x2d086E61267A57503dd4aA1bB4E807bc50fa7Ee1",
+  SGBWHALEV2ADDRESS: "0x2D472e7056f9078749EaD3ce378E02539C826563",
+  SGBTURTLEADDRESS: "0xFF3c90dA50e11CCb39096b7A23Db6627F0efDB9A",
+  GANGSTERSEALADDRESS: "0x84E538006799872a93092f75A2d03a9BEf63deeF",
+  GANGSTEROCTOPUSADDRESS: "0xbB5218C74Bf192f9DE7E8EF136fBD4678739CF12",
+
   // Token Addresses to buy
   SDOODTOKENADDRESS: "0x697bb3B5E1eCf4fEbE6016321b0648d3d6C270B6",
   CARETOKENADDRESS: "0xb1D60fA6FABd9A2Ad89960d070350552E47fb0D6",
@@ -65,6 +71,15 @@ module.exports = {
     "https://bafybeidgictdcpg7fabu4v5epg7md4vi3ce7cepzoilq77zessqeefb3wm.ipfs.nftstorage.link",
   BADBUDDIES3IPFSADDRESS:
     "https://bafybeigje2kqqsjgjzxu7m6ok47iq647thlm5klxdru3fvdapgac7m3fqu.ipfs.nftstorage.link",
+  SGBWHALEV1IPFSADDRESS:
+    "https://ipfs.io/ipfs/QmdJPpG6TbbjDiJZLRzsrvuNKUsMJy6vXi9uKujRd5QwpT",
+  SGBWHALEV2IPFSADDRESS:
+    "https://xwhales.mypinata.cloud/ipfs/QmSgujw75WpRjZRKfxU6mcWqL4pZj2FZ6PrHwCXfDDXKzv",
+  SGBTURTLEIPFSADDRESS:
+    "https://ipfs.io/ipfs/QmZogrqEDyJLDMfnpR97ymkLUA2TpjpikqsbPDarsWX5Te",
+  GANGSTERSEALIPFSADDRESS: "",
+  GANGSTEROCTOPUSIPFSADDRESS:
+    "https://ipfs.io/ipfs/QmYL2EAJynaJxSM2w75U5rjyhRuWpFJsRvNco37dDkMwCP",
 
   // IMG IPFS Address
   DOODCATIMGIPFSADDRESS:
@@ -100,4 +115,13 @@ module.exports = {
     "https://bafybeidal7gu2222yad5a4muqtsxzbtrrlu4cueagsalzqidgv6zftbgry.ipfs.nftstorage.link",
   BADBUDDIES3IMGIPFSADDRESS:
     "https://bafybeifmncnwroplafavhxgzoemlvxdp4354hpcgt4qw5hutbotrlhf3fa.ipfs.nftstorage.link",
+  SGBWHALEV1IMGIPFSADDRESS:
+    "https://ipfs.io/ipfs/QmU8o16h3VgBzmMMTiUN9oN1yTwsduJu2vKLPoRMLore4o",
+  SGBWHALEV2IMGIPFSADDRESS:
+    "https://xwhales.mypinata.cloud/ipfs/QmVLk5Z6wPtu8NaPjjuzZAUQMxZEEdPVGUZP4Y3w5PY4Nk",
+  SGBTURTLEIPFSIMGADDRESS:
+    "https://ipfs.io/ipfs/QmQ1T85MXbqqmLdzaPsP4amN6aQLjJpurrqRZSNsvx8SRt",
+  GANGSTERSEALIMGIPFSADDRESS: "",
+  GANGSTEROCTOPUSIMGIPFSADDRESS:
+    "https://ipfs.io/ipfs/QmPK1ctayyRZ391NMDmcY5pQUiLvegpLeu7GtkbK9ToVeA",
 };

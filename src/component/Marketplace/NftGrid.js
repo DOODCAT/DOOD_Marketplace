@@ -82,6 +82,16 @@ const NftGrid = () => {
               ? "Bad Buddies # " + Number(data[i].tokenId)
               : data[i].nftContract === config.BADBUDDIES3ADDRESS
               ? "Bad Buddies3 # " + Number(data[i].tokenId)
+              : data[i].nftContract === config.SGBWHALEV1ADDRESS
+              ? "SGBWhales V1 #" + Number(data[i].tokenId)
+              : data[i].nftContract === config.SGBWHALEV2ADDRESS
+              ? "SGBWhales V2 #" + Number(data[i].tokenId)
+              : data[i].nftContract === config.SGBTURTLEADDRESS
+              ? "SGBTurtles # " + Number(data[i].tokenId)
+              : data[i].nftContract === config.GANGSTERSEALADDRESS
+              ? "Gangster Seals # " + Number(data[i].tokenId)
+              : data[i].nftContract === config.GANGSTEROCTOPUSADDRESS
+              ? "Gangster Octopuses # " + Number(data[i].tokenId)
               : "Bad Buddies2 # " + Number(data[i].tokenId),
           nftImgUrl:
             data[i].nftContract === config.SPACEKITTYADDRESS
@@ -136,6 +146,26 @@ const NftGrid = () => {
                 )}.png`
               : data[i].nftContract === config.BADBUDDIES3ADDRESS
               ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${Number(
+                  data[i].tokenId
+                )}.png`
+              : data[i].nftContract === config.GANGSTEROCTOPUSADDRESS
+              ? `${config.GANGSTEROCTOPUSIMGIPFSADDRESS}/${Number(
+                  data[i].tokenId
+                )}.png`
+              : data[i].nftContract === config.SGBWHALEV1ADDRESS
+              ? `${config.SGBWHALEV1IMGIPFSADDRESS}/${Number(
+                  data[i].tokenId
+                )}.jpg`
+              : data[i].nftContract === config.SGBWHALEV2ADDRESS
+              ? `${config.SGBWHALEV2IMGIPFSADDRESS}/${Number(
+                  data[i].tokenId
+                )}.png`
+              : data[i].nftContract === config.SGBTURTLEADDRESS
+              ? `${config.SGBTURTLEIPFSIMGADDRESS}/${Number(
+                  data[i].tokenId
+                )}.png`
+              : data[i].nftContract === config.GANGSTERSEALADDRESS
+              ? `${config.GANGSTERSEALIMGIPFSADDRESS}/${Number(
                   data[i].tokenId
                 )}.png`
               : `${config.BADBUDDIES2IMGIPFSADDRESS}/${Number(
@@ -364,6 +394,15 @@ const NftGrid = () => {
               <option className="sm:text-md text-normal">Bad Buddies </option>
               <option className="sm:text-md text-normal">Bad Buddies2 </option>
               <option className="sm:text-md text-normal">Bad Buddies3 </option>
+              <option className="sm:text-md text-normal">SGBWhales V1 </option>
+              <option className="sm:text-md text-normal">SGBWhales V2 </option>
+              <option className="sm:text-md text-normal">SGBTurtles </option>
+              <option className="sm:text-md text-normal">
+                Gangster Seals{" "}
+              </option>
+              <option className="sm:text-md text-normal">
+                Gangster Octopuses{" "}
+              </option>
             </select>
 
             <select

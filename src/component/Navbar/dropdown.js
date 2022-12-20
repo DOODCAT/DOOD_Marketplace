@@ -265,6 +265,81 @@ export default function NftCollectionDropDown() {
                 </Link>
               )}
             </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.SGBWHALEV1ADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  SGBWhales V1
+                </Link>
+              )}
+            </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.SGBWHALEV2ADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  SGBWhales V2
+                </Link>
+              )}
+            </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.SGBTURTLEADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  SGBTurtles
+                </Link>
+              )}
+            </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.GANGSTERSEALADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  GangSter Seals
+                </Link>
+              )}
+            </Menu.Item>
+
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  to={`/mynft/` + config.GANGSTEROCTOPUSADDRESS}
+                  className={classNames(
+                    active
+                      ? "bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"
+                      : "dark:text-white text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}>
+                  Gangster Octopuses
+                </Link>
+              )}
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>

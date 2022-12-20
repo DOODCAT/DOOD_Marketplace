@@ -21,6 +21,8 @@ import ancientaliens_banner from "../../assets/images/nftbanners/ancientaliens_b
 import elementdogs_banner from "../../assets/images/nftbanners/elementdogs_banner.png";
 import badbuddies_banner from "../../assets/images/nftbanners/badbuddies_banner.png";
 import not_banner from "../../assets/images/nftbanners/no_bannder.jpg";
+import sgb_banner from "../../assets/images/nftbanners/sgbWheel_banner.png";
+import gangsters_banner from "../../assets/images/nftbanners/gangster_banner.png";
 
 import spacekitty_nft from "../../assets/images/nftimgs/spacekitty_nft.png";
 import spaceowl_nft from "../../assets/images/nftimgs/spaceowl_nft.png";
@@ -38,6 +40,11 @@ import primordialplanet_nft from "../../assets/images/nftimgs/primordialplanet_n
 import badbuddies_nft from "../../assets/images/nftimgs/badbuddies_nft.png";
 import badbuddies2_nft from "../../assets/images/nftimgs/badbuddies2_nft.png";
 import badbuddies3_nft from "../../assets/images/nftimgs/badbuddies3_nft.png";
+import sgbWhalesV1_nft from "../../assets/images/nftimgs/sgbWhalesV1.png";
+import sgbWhalesV2_nft from "../../assets/images/nftimgs/sgbWhalesV2.png";
+import sgbTurtle_nft from "../../assets/images/nftimgs/sgbTurtle.png";
+import gangsteSeal_nft from "../../assets/images/nftimgs/gangsterSeal.png";
+import gangsterOctopus_nft from "../../assets/images/nftimgs/gangsterOctopus.png";
 
 import SPACEKITTYABI from "../../assets/abi/spacekittynftABI.json";
 import SPACEOWLABI from "../../assets/abi/spaceowlnftABI.json";
@@ -52,6 +59,11 @@ import ROYALRATSABI from "../../assets/abi/royalratsnftABI.json";
 import CLASSICALCATSABI from "../../assets/abi/classicalcatsnftABI.json";
 import ALIENSABI from "../../assets/abi/aliensnftABI.json";
 import PLANETOIDSABI from "../../assets/abi/planetsnftABI.json";
+import SGBWHALEV1ABI from "../../assets/abi/sgbWhalev1ABI.json";
+import SGBWHALEV2ABI from "../../assets/abi/sgbWhalev2ABI.json";
+import SGBTURTLEABI from "../../assets/abi/sgbTurtleABI.json";
+import GANGSTERSEALABI from "../../assets/abi/gangsterSealABI.json";
+import GANGSTEROCTOPUSABI from "../../assets/abi/gangsterOctopusABI.json";
 
 import MARKETPLACEABI from "../../assets/abi/marketplaceABI.json";
 
@@ -144,6 +156,26 @@ const Mynft = () => {
                 ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`
+                : contractAddress === config.SGBWHALEV1ADDRESS
+                ? `${config.SGBWHALEV1IMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.jpg`
+                : contractAddress === config.SGBWHALEV2ADDRESS
+                ? `${config.SGBWHALEV2IMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.SGBTURTLEADDRESS
+                ? `${config.SGBTURTLEIPFSIMGADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.GANGSTERSEALADDRESS
+                ? `${config.GANGSTERSEALIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
+                : contractAddress === config.GANGSTEROCTOPUSADDRESS
+                ? `${config.GANGSTEROCTOPUSIMGIPFSADDRESS}/${data[
+                    i
+                  ].tokenId.toString()}.png`
                 : `${config.BADBUDDIES2IMGIPFSADDRESS}/${data[
                     i
                   ].tokenId.toString()}.png`,
@@ -193,6 +225,16 @@ const Mynft = () => {
         ? SPACEKITTYABI
         : contractAddress === config.BADBUDDIES3ADDRESS
         ? SPACEKITTYABI
+        : contractAddress === config.SGBWHALEV1ADDRESS
+        ? SGBWHALEV1ABI
+        : contractAddress === config.SGBWHALEV2ADDRESS
+        ? SGBWHALEV2ABI
+        : contractAddress === config.SGBTURTLEADDRESS
+        ? SGBTURTLEABI
+        : contractAddress === config.GANGSTERSEALADDRESS
+        ? GANGSTERSEALABI
+        : contractAddress === config.GANGSTEROCTOPUSADDRESS
+        ? GANGSTEROCTOPUSABI
         : SPACEKITTYABI,
       Signer
     );
@@ -237,6 +279,18 @@ const Mynft = () => {
               ? `${config.BADBUDDIESIMGIPFSADDRESS}/${data[i].toString()}.png`
               : contractAddress === config.BADBUDDIES3ADDRESS
               ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${data[i].toString()}.png`
+              : contractAddress === config.SGBWHALEV1ADDRESS
+              ? `${config.SGBWHALEV1IMGIPFSADDRESS}/${data[i].toString()}.jpg`
+              : contractAddress === config.SGBWHALEV2ADDRESS
+              ? `${config.SGBWHALEV2IMGIPFSADDRESS}/${data[i].toString()}.png`
+              : contractAddress === config.SGBTURTLEADDRESS
+              ? `${config.SGBTURTLEIPFSIMGADDRESS}/${data[i].toString()}.png`
+              : contractAddress === config.GANGSTERSEALADDRESS
+              ? `${config.GANGSTERSEALIPFSADDRESS}/${data[i].toString()}.png`
+              : contractAddress === config.GANGSTEROCTOPUSADDRESS
+              ? `${config.GANGSTEROCTOPUSIMGIPFSADDRESS}/${data[
+                  i
+                ].toString()}.png`
               : `${config.BADBUDDIES2IMGIPFSADDRESS}/${data[i].toString()}.png`,
           tokenID: Number(data[i]).toString(),
           ipfs: config.SPACEOWLIMGIPFS,
@@ -369,6 +423,41 @@ const Mynft = () => {
               nftimg={badbuddies3_nft}
               nftname="Bad Buddies3"
               contractAddress={config.BADBUDDIES3ADDRESS}
+            />
+          ) : contractAddress === config.SGBWHALEV1ADDRESS ? (
+            <NftBanner
+              bannerimage={sgb_banner}
+              nftimg={sgbWhalesV1_nft}
+              nftname="SGBWhales v1"
+              contractAddress={config.SGBWHALEV1ADDRESS}
+            />
+          ) : contractAddress === config.SGBWHALEV2ADDRESS ? (
+            <NftBanner
+              bannerimage={sgb_banner}
+              nftimg={sgbWhalesV2_nft}
+              nftname="SGBWhales V2"
+              contractAddress={config.SGBWHALEV2ADDRESS}
+            />
+          ) : contractAddress === config.SGBTURTLEADDRESS ? (
+            <NftBanner
+              bannerimage={sgb_banner}
+              nftimg={sgbTurtle_nft}
+              nftname="SGBTurtles"
+              contractAddress={config.SGBTURTLEADDRESS}
+            />
+          ) : contractAddress === config.GANGSTERSEALADDRESS ? (
+            <NftBanner
+              bannerimage={gangsters_banner}
+              nftimg={gangsteSeal_nft}
+              nftname="Gangster Seals"
+              contractAddress={config.GANGSTERSEALADDRESS}
+            />
+          ) : contractAddress === config.GANGSTEROCTOPUSADDRESS ? (
+            <NftBanner
+              bannerimage={gangsters_banner}
+              nftimg={gangsterOctopus_nft}
+              nftname="Gangster Octopuses"
+              contractAddress={config.GANGSTEROCTOPUSADDRESS}
             />
           ) : (
             <NftBanner

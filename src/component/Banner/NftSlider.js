@@ -20,6 +20,11 @@ import badbuddies_nft from "../../assets/images/nftimgs/badbuddies_nft.mp4";
 import badbuddies2_nft from "../../assets/images/nftimgs/badbuddies2_nft.mp4";
 import badbuddies3_nft from "../../assets/images/nftimgs/badbuddies3_nft.mp4";
 import primordialplanet_nft from "../../assets/images/nftimgs/primordialplanet_nft.png";
+import sgbWhalesV1_nft from "../../assets/images/nftimgs/sgbWhalesV1.png";
+import sgbWhalesV2_nft from "../../assets/images/nftimgs/sgbWhalesV2.png";
+import sgbTurtle_nft from "../../assets/images/nftimgs/sgbTurtle.png";
+import gangsteSeal_nft from "../../assets/images/nftimgs/gangsterSeal.png";
+import gangsterOctopus_nft from "../../assets/images/nftimgs/gangsterOctopus.png";
 
 const NftSlider = () => {
   var settings = {
@@ -29,8 +34,8 @@ const NftSlider = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 500,
-    autoplaySpeed: 1500,
+    speed: 1500,
+    autoplaySpeed: 500,
     cssEase: "linear",
     responsive: [
       {
@@ -344,6 +349,81 @@ const NftSlider = () => {
                 </div>
                 <h1 className="dark:text-white font-bold p-3 text-black text-center">
                   Bad Buddies3
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-3">
+              <div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg slider-card">
+                <div className="slider-img w-full">
+                  <img
+                    src={sgbWhalesV1_nft}
+                    alt=""
+                    className="2xl:h-290 h-290 lg:h-186 md:h-203 object-cover rounded-t-xl sm:h-4 w-full xl:h-242"
+                  />
+                </div>
+                <h1 className="dark:text-white font-bold p-3 text-black text-center">
+                  SGBWhales V1
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-3">
+              <div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg slider-card">
+                <div className="slider-img w-full">
+                  <img
+                    src={sgbWhalesV2_nft}
+                    alt=""
+                    className="2xl:h-290 h-290 lg:h-186 md:h-203 object-cover rounded-t-xl sm:h-4 w-full xl:h-242"
+                  />
+                </div>
+                <h1 className="dark:text-white font-bold p-3 text-black text-center">
+                  SGBWhales V2
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-3">
+              <div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg slider-card">
+                <div className="slider-img w-full">
+                  <img
+                    src={sgbTurtle_nft}
+                    alt=""
+                    className="2xl:h-290 h-290 lg:h-186 md:h-203 object-cover rounded-t-xl sm:h-4 w-full xl:h-242"
+                  />
+                </div>
+                <h1 className="dark:text-white font-bold p-3 text-black text-center">
+                  SGBTurtle
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-3">
+              <div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg slider-card">
+                <div className="slider-img w-full">
+                  <img
+                    src={gangsteSeal_nft}
+                    alt=""
+                    className="2xl:h-290 h-290 lg:h-186 md:h-203 object-cover rounded-t-xl sm:h-4 w-full xl:h-242"
+                  />
+                </div>
+                <h1 className="dark:text-white font-bold p-3 text-black text-center">
+                  GangsterSeal
+                </h1>
+              </div>
+            </div>
+
+            <div className="px-3">
+              <div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg slider-card">
+                <div className="slider-img w-full">
+                  <img
+                    src={gangsterOctopus_nft}
+                    alt=""
+                    className="2xl:h-290 h-290 lg:h-186 md:h-203 object-cover rounded-t-xl sm:h-4 w-full xl:h-242"
+                  />
+                </div>
+                <h1 className="dark:text-white font-bold p-3 text-black text-center">
+                  GangsterOctopus
                 </h1>
               </div>
             </div>

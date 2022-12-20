@@ -25,6 +25,11 @@ import ROYALRATSABI from "../../assets/abi/royalratsnftABI.json";
 import CLASSICALCATSABI from "../../assets/abi/classicalcatsnftABI.json";
 import ALIENSABI from "../../assets/abi/aliensnftABI.json";
 import PLANETOIDSABI from "../../assets/abi/planetsnftABI.json";
+import SGBWHALEV1ABI from "../../assets/abi/sgbWhalev1ABI.json";
+import SGBWHALEV2ABI from "../../assets/abi/sgbWhalev2ABI.json";
+import SGBTURTLEABI from "../../assets/abi/sgbTurtleABI.json";
+import GANGSTERSEALABI from "../../assets/abi/gangsterSealABI.json";
+import GANGSTEROCTOPUSABI from "../../assets/abi/gangsterOctopusABI.json";
 
 const ethers = require("ethers");
 
@@ -88,6 +93,16 @@ const Sell = () => {
         ? `${config.BADBUDDIESIMGIPFSADDRESS}/${nftid}.png`
         : contractAddress === config.BADBUDDIES3ADDRESS
         ? `${config.BADBUDDIES3IMGIPFSADDRESS}/${nftid}.png`
+        : contractAddress === config.SGBWHALEV1ADDRESS
+        ? `${config.SGBWHALEV1IMGIPFSADDRESS}/${nftid}.png`
+        : contractAddress === config.SGBWHALEV2ADDRESS
+        ? `${config.SGBWHALEV2IMGIPFSADDRESS}/${nftid}.png`
+        : contractAddress === config.SGBTURTLEADDRESS
+        ? `${config.SGBTURTLEIPFSIMGADDRESS}/${nftid}.png`
+        : contractAddress === config.GANGSTERSEALADDRESS
+        ? `${config.GANGSTERSEALIMGIPFSADDRESS}/${nftid}.png`
+        : contractAddress === config.GANGSTEROCTOPUSADDRESS
+        ? `${config.GANGSTEROCTOPUSIMGIPFSADDRESS}/${nftid}.png`
         : `${config.BADBUDDIES2IMGIPFSADDRESS}/${nftid}.png`
     );
     await getMarketItem();
@@ -141,6 +156,16 @@ const Sell = () => {
         ? config.BADBUDDIESIPFSADDRESS
         : contractAddress === config.BADBUDDIES3ADDRESS
         ? config.BADBUDDIES3IPFSADDRESS
+        : contractAddress === config.SGBWHALEV1ADDRESS
+        ? config.SGBWHALEV1IPFSADDRESS
+        : contractAddress === config.SGBWHALEV2ADDRESS
+        ? config.SGBWHALEV2IPFSADDRESS
+        : contractAddress === config.SGBTURTLEADDRESS
+        ? config.SGBTURTLEIPFSADDRESS
+        : contractAddress === config.GANGSTERSEALADDRESS
+        ? config.GANGSTERSEALIPFSADDRESS
+        : contractAddress === config.GANGSTEROCTOPUSADDRESS
+        ? config.GANGSTEROCTOPUSIPFSADDRESS
         : config.BADBUDDIES2IPFSADDRESS;
 
     try {
@@ -196,6 +221,16 @@ const Sell = () => {
       ? getNftInfo("The Primordial Planetoids")
       : contractAddress === config.BADBUDDIES3ADDRESS
       ? getNftInfo("Bad Buddies3")
+      : contractAddress === config.SGBWHALEV1ADDRESS
+      ? getNftInfo("SGBWhales V1")
+      : contractAddress === config.SGBWHALEV2ADDRESS
+      ? getNftInfo("SGBWhales V2")
+      : contractAddress === config.SGBTURTLEADDRESS
+      ? getNftInfo("SGBTurtles")
+      : contractAddress === config.GANGSTERSEALADDRESS
+      ? getNftInfo("Gangster Seals")
+      : contractAddress === config.GANGSTEROCTOPUSADDRESS
+      ? getNftInfo("Gangster Octopuses")
       : getNftInfo("Bad Buddies");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -246,6 +281,16 @@ const Sell = () => {
           ? SPACEKITTYABI
           : contractAddress === config.BADBUDDIES3ADDRESS
           ? SPACEKITTYABI
+          : contractAddress === config.SGBWHALEV1ADDRESS
+          ? SGBWHALEV1ABI
+          : contractAddress === config.SGBWHALEV2ADDRESS
+          ? SGBWHALEV2ABI
+          : contractAddress === config.SGBTURTLEADDRESS
+          ? SGBTURTLEABI
+          : contractAddress === config.GANGSTERSEALADDRESS
+          ? GANGSTERSEALABI
+          : contractAddress === config.GANGSTEROCTOPUSADDRESS
+          ? GANGSTEROCTOPUSABI
           : SPACEKITTYABI,
         Signer
       );
