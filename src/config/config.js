@@ -77,7 +77,8 @@ module.exports = {
     "https://xwhales.mypinata.cloud/ipfs/QmSgujw75WpRjZRKfxU6mcWqL4pZj2FZ6PrHwCXfDDXKzv",
   SGBTURTLEIPFSADDRESS:
     "https://ipfs.io/ipfs/QmZogrqEDyJLDMfnpR97ymkLUA2TpjpikqsbPDarsWX5Te",
-  GANGSTERSEALIPFSADDRESS: "",
+  GANGSTERSEALIPFSADDRESS:
+    "https://xwhales.mypinata.cloud/ipfs/Qmdt9kX7jjXYTceiFJcjcxMXAUVzTt42h6FD3BUrgkQbWn",
   GANGSTEROCTOPUSIPFSADDRESS:
     "https://ipfs.io/ipfs/QmYL2EAJynaJxSM2w75U5rjyhRuWpFJsRvNco37dDkMwCP",
 
@@ -121,7 +122,8 @@ module.exports = {
     "https://xwhales.mypinata.cloud/ipfs/QmVLk5Z6wPtu8NaPjjuzZAUQMxZEEdPVGUZP4Y3w5PY4Nk",
   SGBTURTLEIPFSIMGADDRESS:
     "https://ipfs.io/ipfs/QmQ1T85MXbqqmLdzaPsP4amN6aQLjJpurrqRZSNsvx8SRt",
-  GANGSTERSEALIMGIPFSADDRESS: "",
+  GANGSTERSEALIMGIPFSADDRESS:
+    "https://xwhales.mypinata.cloud/ipfs/QmSBeAVS9N31quqF9iEVZTDQNK9cTx8X4U9rGKQbGr4TFp",
   GANGSTEROCTOPUSIMGIPFSADDRESS:
     "https://ipfs.io/ipfs/QmPK1ctayyRZ391NMDmcY5pQUiLvegpLeu7GtkbK9ToVeA",
 };
